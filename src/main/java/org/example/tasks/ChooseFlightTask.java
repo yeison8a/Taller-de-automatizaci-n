@@ -1,10 +1,9 @@
 package org.example.tasks;
 
-import org.example.userinterfaces.ReservePage;
+import org.example.interactions.ChooseFlight;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.actions.Click;
 
 public class ChooseFlightTask implements Task {
 
@@ -14,8 +13,6 @@ public class ChooseFlightTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                Click.on(ReservePage.FIRST_FLIGHT)
-        );
+        actor.attemptsTo(ChooseFlight.toRegister());
     }
 }

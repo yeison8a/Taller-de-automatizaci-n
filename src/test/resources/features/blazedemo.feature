@@ -1,7 +1,12 @@
-Feature: BlazeDemo
+  
+  Feature: Compra de un vuelo a través de la plataforma BlazeDemo
+
+  Como usuario,
+  Quiero realizar una compra de vuelo en BlazeDemo
+  Para poder viajar a donde yo elija
 
   @Blaze
-  Scenario: Prueba base
+  Scenario: Compra exitosa en BlazeDemo
     Given que el usuario abre BlazeDemo
     When selecciona la ciudad de origen "Boston" y destino "Rome"
     When selecciona el primer vuelo disponible

@@ -1,5 +1,6 @@
 package org.example.tasks;
 
+import org.example.interactions.SelectCities;
 import org.example.userinterfaces.FlightsPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -23,10 +24,6 @@ public class SelectCitiesTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                SelectFromOptions.byVisibleText(from).from(FlightsPage.FROM_PORT),
-                SelectFromOptions.byVisibleText(to).from(FlightsPage.TO_PORT),
-                Click.on(FlightsPage.FIND_FLIGHTS)
-        );
+        actor.attemptsTo(SelectCities.toRegister(from, to));
     }
 }
