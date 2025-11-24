@@ -1,6 +1,8 @@
 package org.example.tasks;
 
 import org.example.userinterfaces.PurchasePage;
+import org.example.utils.WaitTime;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -37,9 +39,13 @@ public class FillPurchaseFormTask implements Task {
                 Enter.theValue(data.get("cardNumber")).into(PurchasePage.CARD_NUMBER),
                 Enter.theValue(data.get("month")).into(PurchasePage.MONTH),
                 Enter.theValue(data.get("year")).into(PurchasePage.YEAR),
-                Enter.theValue(data.get("nameOnCard")).into(PurchasePage.NAME_ON_CARD),
-
-                Click.on(PurchasePage.PURCHASE_BUTTON)
+                Enter.theValue(data.get("nameOnCard")).into(PurchasePage.NAME_ON_CARD)
         );
+        WaitTime.putWaitTimeOf(1000);
+
+        actor.attemptsTo(Click.on(PurchasePage.PURCHASE_BUTTON));
+
+        WaitTime.putWaitTimeOf(5000);
+        
     }
 }
